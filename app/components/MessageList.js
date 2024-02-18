@@ -1,9 +1,9 @@
 // MessageList.js
 import clsx from "clsx";
-import { Bot, User } from "lucide-react";
+import { User } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { ImageIcon, DocumentIcon } from '../icons';
+import { RedwoodIcon, ImageIcon, DocumentIcon } from '../icons';
 
 // Message component to display individual messages
 const Message = ({ message, progress, isFirstMessage, fileDetails }) => {
@@ -18,10 +18,10 @@ const Message = ({ message, progress, isFirstMessage, fileDetails }) => {
         <div
           className={clsx(
             "p-1.5 text-white",
-            message.role === "assistant" ? "bg-green-500" : "bg-black"
+            message.role === "assistant" ? "bg-transparent" : "bg-black"
           )}
         >
-          {message.role === "user" ? <User width={20} /> : <Bot width={20} />}
+          {message.role === "user" ? <User width={20} /> : <RedwoodIcon width={20} />}
         </div>
         {message.role === "assistant" && message.isLoading ? (
           <>
